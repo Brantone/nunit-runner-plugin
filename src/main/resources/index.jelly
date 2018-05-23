@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    This plugin runs 'nunit3-console.exe' command line tool to execute unit tests for projects.
+</div>

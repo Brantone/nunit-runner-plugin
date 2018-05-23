@@ -1,0 +1,50 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+    <j:if test="${descriptor.showNUnitToolOptions()}">
+        <f:entry title="${%Version}" field="nunitName">
+            <f:select/>
+        </f:entry>
+    </j:if>
+
+    <f:entry title="${%TestFiles}" field="testFiles">
+        <f:expandableTextbox/>
+    </f:entry>
+
+    <f:entry title="${%Settings}" field="settings">
+        <f:textbox/>
+    </f:entry>
+
+    <f:entry title="${%Tests}" field="tests">
+        <f:textbox/>
+    </f:entry>
+
+    <f:entry title="${%TestCaseFilter}" field="testCaseFilter">
+        <f:textbox/>
+    </f:entry>
+
+    <f:entry title="${%Enablecodecoverage}" field="enablecodecoverage">
+        <f:checkbox default="${descriptor.defaultEnableCodeCoverage}"/>
+    </f:entry>
+
+    <f:advanced>
+        <f:entry title="${%Platform}" field="platform">
+            <f:combobox/>
+        </f:entry>
+
+        <f:entry title="${%Framework}" field="framework">
+            <f:combobox/>
+        </f:entry>
+
+        <f:entry title="${%CommandLineArguments}" field="cmdLineArgs">
+            <f:textbox/>
+        </f:entry>
+
+        <f:entry title="${%FailBuild}" field="failBuild">
+            <f:checkbox default="${descriptor.defaultFailBuild}"/>
+        </f:entry>
+
+    </f:advanced>
+
+</j:jelly>
